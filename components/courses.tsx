@@ -35,7 +35,7 @@ export default function Courses() {
       duration: "12 weeks",
       students: 25,
       rating: 4.9,
-      price: "$2,999",
+      price: "₹2,99,999",
       location: "New York Campus",
     },
     {
@@ -45,7 +45,7 @@ export default function Courses() {
       duration: "16 weeks",
       students: 20,
       rating: 4.8,
-      price: "$3,499",
+      price: "₹3,49,999",
       location: "San Francisco Campus",
     },
     {
@@ -55,7 +55,7 @@ export default function Courses() {
       duration: "8 weeks",
       students: 30,
       rating: 4.7,
-      price: "$1,999",
+      price: "₹1,99,999",
       location: "Los Angeles Campus",
     },
   ]
@@ -67,7 +67,7 @@ export default function Courses() {
       image: "/placeholder.svg?height=200&width=300",
       startDate: "March 15, 2024",
       duration: "10 weeks",
-      price: "$2,499",
+      price: "₹2,49,999",
       earlyBird: true,
     },
     {
@@ -76,7 +76,7 @@ export default function Courses() {
       image: "/placeholder.svg?height=200&width=300",
       startDate: "April 1, 2024",
       duration: "12 weeks",
-      price: "$2,799",
+      price: "₹2,79,999",
       earlyBird: false,
     },
     {
@@ -85,7 +85,7 @@ export default function Courses() {
       image: "/placeholder.svg?height=200&width=300",
       startDate: "April 20, 2024",
       duration: "14 weeks",
-      price: "$3,199",
+      price: "₹3,19,999",
       earlyBird: true,
     },
   ]
@@ -98,7 +98,7 @@ export default function Courses() {
       duration: "Self-paced",
       students: 1250,
       rating: 4.9,
-      price: "$199",
+      price: "₹19,999",
       level: "Beginner to Advanced",
     },
     {
@@ -108,7 +108,7 @@ export default function Courses() {
       duration: "6 weeks",
       students: 890,
       rating: 4.8,
-      price: "$299",
+      price: "₹29,999",
       level: "Intermediate",
     },
     {
@@ -118,44 +118,53 @@ export default function Courses() {
       duration: "8 weeks",
       students: 2100,
       rating: 4.9,
-      price: "$249",
+      price: "₹24,999",
       level: "Beginner",
     },
   ]
 
   return (
-    <section id="courses" className="py-20 px-4">
+    <section id="courses" className="py-20 px-4 bg-black">
       <div className="container mx-auto">
         <div
           className={`text-center mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">Our Courses</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Our Courses</h2>
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
             Choose from our comprehensive range of courses designed to help you achieve your learning goals
           </p>
         </div>
 
         <Tabs defaultValue="offline" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-12">
-            <TabsTrigger value="offline" className="text-lg py-3">
+          <TabsList className="grid w-full grid-cols-3 mb-12 bg-gray-900 border border-yellow-500/20">
+            <TabsTrigger
+              value="offline"
+              className="text-base sm:text-lg py-3 text-gray-300 data-[state=active]:text-black data-[state=active]:bg-yellow-500"
+            >
               Offline Courses
             </TabsTrigger>
-            <TabsTrigger value="upcoming" className="text-lg py-3">
+            <TabsTrigger
+              value="upcoming"
+              className="text-base sm:text-lg py-3 text-gray-300 data-[state=active]:text-black data-[state=active]:bg-yellow-500"
+            >
               Upcoming
             </TabsTrigger>
-            <TabsTrigger value="online" className="text-lg py-3">
+            <TabsTrigger
+              value="online"
+              className="text-base sm:text-lg py-3 text-gray-300 data-[state=active]:text-black data-[state=active]:bg-yellow-500"
+            >
               Online Courses
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="offline">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {offlineCourses.map((course, index) => (
                 <Card
                   key={index}
-                  className={`group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ${
+                  className={`group hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-2 bg-gray-900 border-yellow-500/20 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
@@ -167,15 +176,17 @@ export default function Courses() {
                         alt={course.title}
                         width={300}
                         height={200}
-                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 filter brightness-0 invert"
                         loading="lazy"
                       />
-                      <Badge className="absolute top-4 left-4 bg-green-500 hover:bg-green-600">Offline</Badge>
+                      <Badge className="absolute top-4 left-4 bg-yellow-500 hover:bg-yellow-400 text-black font-semibold">
+                        Offline
+                      </Badge>
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
-                    <CardTitle className="text-xl mb-2">{course.title}</CardTitle>
-                    <CardDescription className="text-gray-600 mb-4">{course.description}</CardDescription>
+                    <CardTitle className="text-xl mb-2 text-white">{course.title}</CardTitle>
+                    <CardDescription className="text-gray-400 mb-4">{course.description}</CardDescription>
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center text-sm text-gray-500">
                         <Clock className="w-4 h-4 mr-2" />
@@ -191,8 +202,8 @@ export default function Courses() {
                       </div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-2xl font-bold text-blue-600">{course.price}</span>
-                      <Button className="bg-blue-600 hover:bg-blue-700">Enroll Now</Button>
+                      <span className="text-xl sm:text-2xl font-bold text-yellow-400">{course.price}</span>
+                      <Button className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold">Enroll Now</Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -201,11 +212,11 @@ export default function Courses() {
           </TabsContent>
 
           <TabsContent value="upcoming">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {upcomingCourses.map((course, index) => (
                 <Card
                   key={index}
-                  className={`group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ${
+                  className={`group hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-2 bg-gray-900 border-yellow-500/20 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
@@ -217,18 +228,22 @@ export default function Courses() {
                         alt={course.title}
                         width={300}
                         height={200}
-                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 filter brightness-0 invert"
                         loading="lazy"
                       />
-                      <Badge className="absolute top-4 left-4 bg-orange-500 hover:bg-orange-600">Coming Soon</Badge>
+                      <Badge className="absolute top-4 left-4 bg-gray-700 hover:bg-gray-600 text-white">
+                        Coming Soon
+                      </Badge>
                       {course.earlyBird && (
-                        <Badge className="absolute top-4 right-4 bg-red-500 hover:bg-red-600">Early Bird</Badge>
+                        <Badge className="absolute top-4 right-4 bg-yellow-500 hover:bg-yellow-400 text-black font-semibold">
+                          Early Bird
+                        </Badge>
                       )}
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
-                    <CardTitle className="text-xl mb-2">{course.title}</CardTitle>
-                    <CardDescription className="text-gray-600 mb-4">{course.description}</CardDescription>
+                    <CardTitle className="text-xl mb-2 text-white">{course.title}</CardTitle>
+                    <CardDescription className="text-gray-400 mb-4">{course.description}</CardDescription>
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center text-sm text-gray-500">
                         <Calendar className="w-4 h-4 mr-2" />
@@ -240,10 +255,10 @@ export default function Courses() {
                       </div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-2xl font-bold text-blue-600">{course.price}</span>
+                      <span className="text-xl sm:text-2xl font-bold text-yellow-400">{course.price}</span>
                       <Button
                         variant="outline"
-                        className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white bg-transparent"
+                        className="border-yellow-500 text-yellow-400 hover:bg-yellow-500 hover:text-black bg-transparent"
                       >
                         Pre-Register
                       </Button>
@@ -255,11 +270,11 @@ export default function Courses() {
           </TabsContent>
 
           <TabsContent value="online">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {onlineCourses.map((course, index) => (
                 <Card
                   key={index}
-                  className={`group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ${
+                  className={`group hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-2 bg-gray-900 border-yellow-500/20 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
@@ -271,15 +286,17 @@ export default function Courses() {
                         alt={course.title}
                         width={300}
                         height={200}
-                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 filter brightness-0 invert"
                         loading="lazy"
                       />
-                      <Badge className="absolute top-4 left-4 bg-blue-500 hover:bg-blue-600">Online</Badge>
+                      <Badge className="absolute top-4 left-4 bg-yellow-500 hover:bg-yellow-400 text-black font-semibold">
+                        Online
+                      </Badge>
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
-                    <CardTitle className="text-xl mb-2">{course.title}</CardTitle>
-                    <CardDescription className="text-gray-600 mb-4">{course.description}</CardDescription>
+                    <CardTitle className="text-xl mb-2 text-white">{course.title}</CardTitle>
+                    <CardDescription className="text-gray-400 mb-4">{course.description}</CardDescription>
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center text-sm text-gray-500">
                         <Clock className="w-4 h-4 mr-2" />
@@ -295,8 +312,10 @@ export default function Courses() {
                       </div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-2xl font-bold text-blue-600">{course.price}</span>
-                      <Button className="bg-blue-600 hover:bg-blue-700">Start Learning</Button>
+                      <span className="text-xl sm:text-2xl font-bold text-yellow-400">{course.price}</span>
+                      <Button className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold">
+                        Start Learning
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>

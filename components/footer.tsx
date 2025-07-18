@@ -7,7 +7,6 @@ export default function Footer() {
   const quickLinks = [
     { name: "About Us", href: "#about" },
     { name: "Courses", href: "#courses" },
-    { name: "Our Footprints", href: "#footprints" },
     { name: "Contact", href: "#contact" },
     { name: "Blog", href: "#" },
     { name: "Careers", href: "#" },
@@ -40,7 +39,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-gray-900 text-white py-16">
+    <footer className="bg-black text-white py-16 border-t border-yellow-500/20">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-12">
           {/* Company Info */}
@@ -51,25 +50,25 @@ export default function Footer() {
                 alt="Think About Logo"
                 width={40}
                 height={40}
-                className="w-10 h-10 filter invert"
+                className="w-10 h-10 filter brightness-0 invert"
               />
-              <span className="text-2xl font-bold">Think About</span>
+              <span className="text-xl sm:text-2xl font-bold text-yellow-400">Think About</span>
             </div>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
               Transforming education through technology and innovation. Join thousands of students worldwide in their
               learning journey.
             </p>
             <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-gray-300">
-                <Mail className="w-5 h-5" />
+              <div className="flex items-center space-x-3 text-gray-300 text-sm sm:text-base">
+                <Mail className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-400" />
                 <span>hello@thinkabout.edu</span>
               </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <Phone className="w-5 h-5" />
-                <span>+1 (555) 123-4567</span>
+              <div className="flex items-center space-x-3 text-gray-300 text-sm sm:text-base">
+                <Phone className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-400" />
+                <span>+91 (555) 123-4567</span>
               </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <MapPin className="w-5 h-5" />
+              <div className="flex items-center space-x-3 text-gray-300 text-sm sm:text-base">
+                <MapPin className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-400" />
                 <span>123 Education St, Learning City</span>
               </div>
             </div>
@@ -77,11 +76,14 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
+            <h3 className="text-lg sm:text-xl font-semibold mb-6 text-yellow-400">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-gray-300 hover:text-white transition-colors duration-200">
+                  <a
+                    href={link.href}
+                    className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm sm:text-base"
+                  >
                     {link.name}
                   </a>
                 </li>
@@ -91,11 +93,14 @@ export default function Footer() {
 
           {/* Courses */}
           <div>
-            <h3 className="text-xl font-semibold mb-6">Popular Courses</h3>
+            <h3 className="text-lg sm:text-xl font-semibold mb-6 text-yellow-400">Popular Courses</h3>
             <ul className="space-y-3">
               {courses.map((course, index) => (
                 <li key={index}>
-                  <a href={course.href} className="text-gray-300 hover:text-white transition-colors duration-200">
+                  <a
+                    href={course.href}
+                    className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm sm:text-base"
+                  >
                     {course.name}
                   </a>
                 </li>
@@ -105,11 +110,14 @@ export default function Footer() {
 
           {/* Support */}
           <div>
-            <h3 className="text-xl font-semibold mb-6">Support</h3>
+            <h3 className="text-lg sm:text-xl font-semibold mb-6 text-yellow-400">Support</h3>
             <ul className="space-y-3">
               {support.map((item, index) => (
                 <li key={index}>
-                  <a href={item.href} className="text-gray-300 hover:text-white transition-colors duration-200">
+                  <a
+                    href={item.href}
+                    className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm sm:text-base"
+                  >
                     {item.name}
                   </a>
                 </li>
@@ -119,7 +127,7 @@ export default function Footer() {
         </div>
 
         {/* Social Links & Newsletter */}
-        <div className="border-t border-gray-800 pt-8 mb-8">
+        <div className="border-t border-yellow-500/20 pt-8 mb-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <div className="flex space-x-6">
               {socialLinks.map((social, index) => (
@@ -127,22 +135,24 @@ export default function Footer() {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="text-gray-400 hover:text-white transition-colors duration-200 transform hover:scale-110"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 transform hover:scale-110"
                 >
-                  <social.icon className="w-6 h-6" />
+                  <social.icon className="w-5 sm:w-6 h-5 sm:h-6" />
                 </a>
               ))}
             </div>
             <div className="text-center md:text-right">
-              <h4 className="text-lg font-semibold mb-2">Stay Updated</h4>
-              <p className="text-gray-300 text-sm">Subscribe to our newsletter for the latest courses and updates</p>
+              <h4 className="text-base sm:text-lg font-semibold mb-2 text-yellow-400">Stay Updated</h4>
+              <p className="text-gray-300 text-xs sm:text-sm">
+                Subscribe to our newsletter for the latest courses and updates
+              </p>
             </div>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 pt-8 text-center">
-          <p className="text-gray-400">
+        <div className="border-t border-yellow-500/20 pt-8 text-center">
+          <p className="text-gray-400 text-xs sm:text-sm">
             © {new Date().getFullYear()} Think About. All rights reserved. Made with ❤️ for learners worldwide.
           </p>
         </div>
