@@ -25,17 +25,13 @@ export default function Footer() {
     { name: "Help Center", href: "#" },
     { name: "Student Portal", href: "#" },
     { name: "Instructor Portal", href: "#" },
-    { name: "Community", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms of Service", href: "#" },
+    { name: "Community", href: "https://wa.me/+918102117024?text=Hi! I'm interested in learning more about Think About courses." },
   ]
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Youtube, href: "#", label: "YouTube" },
+    { icon: Twitter, href: "x.com/ThinkAbout__in", label: "Twitter" },
+    { icon: Instagram, href: "https://www.instagram.com/thinkabout.official/", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/107836984/admin/dashboard/", label: "LinkedIn" },
   ]
 
   return (
@@ -61,15 +57,15 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-slate-300 text-sm sm:text-base">
                 <Mail className="w-4 sm:w-5 h-4 sm:h-5 text-blue-300" />
-                <span>hello@thinkabout.edu</span>
+                <span>care@thinkabout.in</span>
               </div>
               <div className="flex items-center space-x-3 text-slate-300 text-sm sm:text-base">
                 <Phone className="w-4 sm:w-5 h-4 sm:h-5 text-blue-300" />
-                <span>+91 (555) 123-4567</span>
+                <span>+918102117024</span>
               </div>
               <div className="flex items-center space-x-3 text-slate-300 text-sm sm:text-base">
                 <MapPin className="w-4 sm:w-5 h-4 sm:h-5 text-blue-300" />
-                <span>123 Education St, Learning City</span>
+                <span>Mithanpura Muzzafarpur, Bihar</span>
               </div>
             </div>
           </div>

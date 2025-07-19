@@ -62,7 +62,7 @@ export default function About() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">About Think About</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">Our Approach</h2>
           <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
             We're passionate about transforming education through technology and innovation, making quality learning
             accessible to everyone, everywhere.

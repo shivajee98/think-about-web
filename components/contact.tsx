@@ -53,19 +53,19 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email Us",
-      details: "hello@thinkabout.edu",
+      details: "care@thinkabout.in",
       description: "Send us an email anytime",
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: "+91 (555) 123-4567",
+      details: "+918102117024",
       description: "Mon-Fri from 8am to 6pm",
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      details: "123 Education St, Learning City",
+      details: "Mithanpura Muzzafarpur, Bihar",
       description: "Come visit our main campus",
     },
     {

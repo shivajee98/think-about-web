@@ -29,33 +29,44 @@ export default function Courses() {
 
   const offlineCourses = [
     {
-      title: "Advanced Programming Bootcamp",
-      description: "Intensive 12-week program covering full-stack development",
+      title: "Beginner's Pathway",
+      description: "LaunchPad: Interview & Communication Skills. " +
+        "A comprehensive course for freshers focusing on Interview Preparation, Personality Development, and Communication",
       image: "/placeholder.svg?height=200&width=300",
       duration: "12 weeks",
       students: 25,
       rating: 4.9,
-      price: "₹2,99,999",
+      price: "₹4,999",
       location: "New York Campus",
     },
     {
-      title: "Data Science Immersive",
-      description: "Comprehensive data science program with hands-on projects",
+      title: "Mid-Career Growth",
+      description: "Pathfinder: Career Growth & Networking. Aimed at professionals with some experience, covering Career Guidance, Advanced Communication, and Networking) ",
       image: "/placeholder.svg?height=200&width=300",
       duration: "16 weeks",
       students: 20,
       rating: 4.8,
-      price: "₹3,49,999",
+      price: "₹4,999",
       location: "San Francisco Campus",
     },
     {
-      title: "UX/UI Design Workshop",
-      description: "Learn design thinking and create stunning user experiences",
+      title: "Executive Edge",
+      description: "Leadership Summit: Executive Interview & Impact. For senior professionals, focusing on Executive Interview Preparation, Leadership Development, and High-Level Communication",
       image: "/placeholder.svg?height=200&width=300",
       duration: "8 weeks",
       students: 30,
       rating: 4.7,
-      price: "₹1,99,999",
+      price: "₹4,999",
+      location: "Los Angeles Campus",
+    },
+    {
+      title: "USP (Unified Course Offering)",
+      description: "Career Acceleration Blueprint. The all-in-one, structured learning journey for individuals at any stage of their career, designed to accelerate growth and success)",
+      image: "/placeholder.svg?height=200&width=300",
+      duration: "8 weeks",
+      students: 30,
+      rating: 4.7,
+      price: "₹11,999",
       location: "Los Angeles Campus",
     },
   ]
@@ -67,7 +78,7 @@ export default function Courses() {
       image: "/placeholder.svg?height=200&width=300",
       startDate: "March 15, 2024",
       duration: "10 weeks",
-      price: "₹2,49,999",
+      price: "₹4,999",
       earlyBird: true,
     },
     {
@@ -76,7 +87,7 @@ export default function Courses() {
       image: "/placeholder.svg?height=200&width=300",
       startDate: "April 1, 2024",
       duration: "12 weeks",
-      price: "₹2,79,999",
+      price: "₹4,999",
       earlyBird: false,
     },
     {
@@ -85,7 +96,7 @@ export default function Courses() {
       image: "/placeholder.svg?height=200&width=300",
       startDate: "April 20, 2024",
       duration: "14 weeks",
-      price: "₹3,19,999",
+      price: "₹3,999",
       earlyBird: true,
     },
   ]
@@ -98,7 +109,7 @@ export default function Courses() {
       duration: "Self-paced",
       students: 1250,
       rating: 4.9,
-      price: "₹19,999",
+      price: "₹4,999",
       level: "Beginner to Advanced",
     },
     {
@@ -108,7 +119,7 @@ export default function Courses() {
       duration: "6 weeks",
       students: 890,
       rating: 4.8,
-      price: "₹29,999",
+      price: "₹3,999",
       level: "Intermediate",
     },
     {
@@ -118,7 +129,7 @@ export default function Courses() {
       duration: "8 weeks",
       students: 2100,
       rating: 4.9,
-      price: "₹24,999",
+      price: "₹4,999",
       level: "Beginner",
     },
   ]
@@ -127,9 +138,8 @@ export default function Courses() {
     <section id="courses" className="py-20 px-4 bg-white">
       <div className="container mx-auto">
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">Our Courses</h2>
           <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
@@ -164,9 +174,8 @@ export default function Courses() {
               {offlineCourses.map((course, index) => (
                 <Card
                   key={index}
-                  className={`group hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 transform hover:-translate-y-2 bg-slate-50 border-blue-900/10 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                  }`}
+                  className={`group hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 transform hover:-translate-y-2 bg-slate-50 border-blue-900/10 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <CardHeader className="p-0">
@@ -216,9 +225,8 @@ export default function Courses() {
               {upcomingCourses.map((course, index) => (
                 <Card
                   key={index}
-                  className={`group hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 transform hover:-translate-y-2 bg-slate-50 border-blue-900/10 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                  }`}
+                  className={`group hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 transform hover:-translate-y-2 bg-slate-50 border-blue-900/10 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <CardHeader className="p-0">
@@ -274,9 +282,8 @@ export default function Courses() {
               {onlineCourses.map((course, index) => (
                 <Card
                   key={index}
-                  className={`group hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 transform hover:-translate-y-2 bg-slate-50 border-blue-900/10 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                  }`}
+                  className={`group hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 transform hover:-translate-y-2 bg-slate-50 border-blue-900/10 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <CardHeader className="p-0">
