@@ -33,6 +33,27 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* Ensure smooth cursor tracking */
+    cursor: none;
+  }
+
+  /* Custom cursor for better spotlight effect */
+  * {
+    cursor: inherit;
+  }
+
+  /* Re-enable cursor for interactive elements */
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    cursor: pointer;
+  }
+
+  input,
+  textarea {
+    cursor: text;
   }
 }
 
@@ -90,6 +111,25 @@
   }
 }
 
+/* WhatsApp button specific animations */
+@keyframes bounce-gentle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out;
 }
@@ -108,6 +148,14 @@
 
 .animate-glow {
   animation: glow 2s ease-in-out infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 /* Smooth scrolling */
@@ -193,4 +241,57 @@ body {
 /* Light silver backgrounds */
 .bg-slate-50 {
   background-color: #f8fafc;
+}
+
+/* Spotlight effect enhancements */
+@media (hover: hover) and (pointer: fine) {
+  /* Desktop-specific spotlight adjustments */
+  body {
+    cursor: default;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  /* Mobile-specific adjustments */
+  body {
+    cursor: auto;
+  }
+}
+
+/* Ensure content is above spotlight */
+.relative {
+  position: relative;
+}
+
+/* Performance optimization for spotlight */
+.spotlight-container {
+  will-change: background;
+  transform: translateZ(0);
+}
+
+/* WhatsApp button hover effects */
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+}
+
+/* Green color variants for WhatsApp */
+.bg-green-500 {
+  background-color: #22c55e;
+}
+
+.bg-green-600 {
+  background-color: #16a34a;
+}
+
+.bg-green-400 {
+  background-color: #4ade80;
+}
+
+.hover\:bg-green-600:hover {
+  background-color: #16a34a;
+}
+
+.text-green-500 {
+  color: #22c55e;
 }
