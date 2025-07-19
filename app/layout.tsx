@@ -6,6 +6,7 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Think About - Educational Technology Platform",
+  icons: "/logo.svg",
   description: "Transform your learning journey with innovative educational technology",
   generator: "v0.dev",
 }
