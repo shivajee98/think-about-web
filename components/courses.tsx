@@ -124,36 +124,36 @@ export default function Courses() {
   ]
 
   return (
-    <section id="courses" className="py-20 px-4 bg-black">
+    <section id="courses" className="py-20 px-4 bg-white">
       <div className="container mx-auto">
         <div
           className={`text-center mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Our Courses</h2>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">Our Courses</h2>
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
             Choose from our comprehensive range of courses designed to help you achieve your learning goals
           </p>
         </div>
 
         <Tabs defaultValue="offline" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-12 bg-gray-900 border border-yellow-500/20">
+          <TabsList className="grid w-full grid-cols-3 mb-12 bg-slate-100 border border-blue-900/10">
             <TabsTrigger
               value="offline"
-              className="text-base sm:text-lg py-3 text-gray-300 data-[state=active]:text-black data-[state=active]:bg-yellow-500"
+              className="text-base sm:text-lg py-3 text-slate-600 data-[state=active]:text-white data-[state=active]:bg-blue-900"
             >
               Offline Courses
             </TabsTrigger>
             <TabsTrigger
               value="upcoming"
-              className="text-base sm:text-lg py-3 text-gray-300 data-[state=active]:text-black data-[state=active]:bg-yellow-500"
+              className="text-base sm:text-lg py-3 text-slate-600 data-[state=active]:text-white data-[state=active]:bg-blue-900"
             >
               Upcoming
             </TabsTrigger>
             <TabsTrigger
               value="online"
-              className="text-base sm:text-lg py-3 text-gray-300 data-[state=active]:text-black data-[state=active]:bg-yellow-500"
+              className="text-base sm:text-lg py-3 text-slate-600 data-[state=active]:text-white data-[state=active]:bg-blue-900"
             >
               Online Courses
             </TabsTrigger>
@@ -164,7 +164,7 @@ export default function Courses() {
               {offlineCourses.map((course, index) => (
                 <Card
                   key={index}
-                  className={`group hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-2 bg-gray-900 border-yellow-500/20 ${
+                  className={`group hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 transform hover:-translate-y-2 bg-slate-50 border-blue-900/10 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
@@ -176,34 +176,34 @@ export default function Courses() {
                         alt={course.title}
                         width={300}
                         height={200}
-                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 filter brightness-0 invert"
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                         loading="lazy"
                       />
-                      <Badge className="absolute top-4 left-4 bg-yellow-500 hover:bg-yellow-400 text-black font-semibold">
+                      <Badge className="absolute top-4 left-4 bg-blue-900 hover:bg-blue-800 text-white font-semibold">
                         Offline
                       </Badge>
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
-                    <CardTitle className="text-xl mb-2 text-white">{course.title}</CardTitle>
-                    <CardDescription className="text-gray-400 mb-4">{course.description}</CardDescription>
+                    <CardTitle className="text-xl mb-2 text-slate-800">{course.title}</CardTitle>
+                    <CardDescription className="text-slate-600 mb-4">{course.description}</CardDescription>
                     <div className="space-y-2 mb-4">
-                      <div className="flex items-center text-sm text-gray-500">
+                      <div className="flex items-center text-sm text-slate-500">
                         <Clock className="w-4 h-4 mr-2" />
                         {course.duration}
                       </div>
-                      <div className="flex items-center text-sm text-gray-500">
+                      <div className="flex items-center text-sm text-slate-500">
                         <Users className="w-4 h-4 mr-2" />
                         {course.students} students
                       </div>
-                      <div className="flex items-center text-sm text-gray-500">
-                        <Star className="w-4 h-4 mr-2 fill-yellow-400 text-yellow-400" />
+                      <div className="flex items-center text-sm text-slate-500">
+                        <Star className="w-4 h-4 mr-2 fill-blue-900 text-blue-900" />
                         {course.rating} rating
                       </div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-xl sm:text-2xl font-bold text-yellow-400">{course.price}</span>
-                      <Button className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold">Enroll Now</Button>
+                      <span className="text-xl sm:text-2xl font-bold text-blue-900">{course.price}</span>
+                      <Button className="bg-blue-900 hover:bg-blue-800 text-white font-semibold">Enroll Now</Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -216,7 +216,7 @@ export default function Courses() {
               {upcomingCourses.map((course, index) => (
                 <Card
                   key={index}
-                  className={`group hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-2 bg-gray-900 border-yellow-500/20 ${
+                  className={`group hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 transform hover:-translate-y-2 bg-slate-50 border-blue-900/10 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
@@ -228,37 +228,37 @@ export default function Courses() {
                         alt={course.title}
                         width={300}
                         height={200}
-                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 filter brightness-0 invert"
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                         loading="lazy"
                       />
-                      <Badge className="absolute top-4 left-4 bg-gray-700 hover:bg-gray-600 text-white">
+                      <Badge className="absolute top-4 left-4 bg-slate-600 hover:bg-slate-500 text-white">
                         Coming Soon
                       </Badge>
                       {course.earlyBird && (
-                        <Badge className="absolute top-4 right-4 bg-yellow-500 hover:bg-yellow-400 text-black font-semibold">
+                        <Badge className="absolute top-4 right-4 bg-blue-900 hover:bg-blue-800 text-white font-semibold">
                           Early Bird
                         </Badge>
                       )}
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
-                    <CardTitle className="text-xl mb-2 text-white">{course.title}</CardTitle>
-                    <CardDescription className="text-gray-400 mb-4">{course.description}</CardDescription>
+                    <CardTitle className="text-xl mb-2 text-slate-800">{course.title}</CardTitle>
+                    <CardDescription className="text-slate-600 mb-4">{course.description}</CardDescription>
                     <div className="space-y-2 mb-4">
-                      <div className="flex items-center text-sm text-gray-500">
+                      <div className="flex items-center text-sm text-slate-500">
                         <Calendar className="w-4 h-4 mr-2" />
                         Starts {course.startDate}
                       </div>
-                      <div className="flex items-center text-sm text-gray-500">
+                      <div className="flex items-center text-sm text-slate-500">
                         <Clock className="w-4 h-4 mr-2" />
                         {course.duration}
                       </div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-xl sm:text-2xl font-bold text-yellow-400">{course.price}</span>
+                      <span className="text-xl sm:text-2xl font-bold text-blue-900">{course.price}</span>
                       <Button
                         variant="outline"
-                        className="border-yellow-500 text-yellow-400 hover:bg-yellow-500 hover:text-black bg-transparent"
+                        className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white bg-transparent"
                       >
                         Pre-Register
                       </Button>
@@ -274,7 +274,7 @@ export default function Courses() {
               {onlineCourses.map((course, index) => (
                 <Card
                   key={index}
-                  className={`group hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-2 bg-gray-900 border-yellow-500/20 ${
+                  className={`group hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 transform hover:-translate-y-2 bg-slate-50 border-blue-900/10 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
@@ -286,36 +286,34 @@ export default function Courses() {
                         alt={course.title}
                         width={300}
                         height={200}
-                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 filter brightness-0 invert"
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                         loading="lazy"
                       />
-                      <Badge className="absolute top-4 left-4 bg-yellow-500 hover:bg-yellow-400 text-black font-semibold">
+                      <Badge className="absolute top-4 left-4 bg-blue-900 hover:bg-blue-800 text-white font-semibold">
                         Online
                       </Badge>
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
-                    <CardTitle className="text-xl mb-2 text-white">{course.title}</CardTitle>
-                    <CardDescription className="text-gray-400 mb-4">{course.description}</CardDescription>
+                    <CardTitle className="text-xl mb-2 text-slate-800">{course.title}</CardTitle>
+                    <CardDescription className="text-slate-600 mb-4">{course.description}</CardDescription>
                     <div className="space-y-2 mb-4">
-                      <div className="flex items-center text-sm text-gray-500">
+                      <div className="flex items-center text-sm text-slate-500">
                         <Clock className="w-4 h-4 mr-2" />
                         {course.duration}
                       </div>
-                      <div className="flex items-center text-sm text-gray-500">
+                      <div className="flex items-center text-sm text-slate-500">
                         <Users className="w-4 h-4 mr-2" />
                         {course.students} students
                       </div>
-                      <div className="flex items-center text-sm text-gray-500">
-                        <Star className="w-4 h-4 mr-2 fill-yellow-400 text-yellow-400" />
+                      <div className="flex items-center text-sm text-slate-500">
+                        <Star className="w-4 h-4 mr-2 fill-blue-900 text-blue-900" />
                         {course.rating} rating
                       </div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-xl sm:text-2xl font-bold text-yellow-400">{course.price}</span>
-                      <Button className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold">
-                        Start Learning
-                      </Button>
+                      <span className="text-xl sm:text-2xl font-bold text-blue-900">{course.price}</span>
+                      <Button className="bg-blue-900 hover:bg-blue-800 text-white font-semibold">Start Learning</Button>
                     </div>
                   </CardContent>
                 </Card>

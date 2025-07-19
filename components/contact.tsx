@@ -77,15 +77,15 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-20 px-4 bg-black">
+    <section id="contact" className="py-20 px-4 bg-white">
       <div className="container mx-auto">
         <div
           className={`text-center mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Get In Touch</h2>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">Get In Touch</h2>
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
             Have questions about our courses or need guidance on your learning journey? We're here to help you every
             step of the way.
           </p>
@@ -97,15 +97,15 @@ export default function Contact() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
             }`}
           >
-            <Card className="shadow-lg bg-gray-900 border-yellow-500/20">
+            <Card className="shadow-lg bg-slate-50 border-blue-900/10">
               <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl text-white">Send us a Message</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl text-slate-800">Send us a Message</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
                         Full Name
                       </label>
                       <Input
@@ -116,11 +116,11 @@ export default function Contact() {
                         onChange={handleInputChange}
                         placeholder="Your full name"
                         required
-                        className="w-full bg-gray-800 border-yellow-500/20 text-white placeholder-gray-400 focus:border-yellow-500"
+                        className="w-full bg-white border-slate-300 text-slate-800 placeholder-slate-400 focus:border-blue-900"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
                         Email Address
                       </label>
                       <Input
@@ -131,12 +131,12 @@ export default function Contact() {
                         onChange={handleInputChange}
                         placeholder="your.email@example.com"
                         required
-                        className="w-full bg-gray-800 border-yellow-500/20 text-white placeholder-gray-400 focus:border-yellow-500"
+                        className="w-full bg-white border-slate-300 text-slate-800 placeholder-slate-400 focus:border-blue-900"
                       />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">
                       Subject
                     </label>
                     <Input
@@ -147,11 +147,11 @@ export default function Contact() {
                       onChange={handleInputChange}
                       placeholder="What's this about?"
                       required
-                      className="w-full bg-gray-800 border-yellow-500/20 text-white placeholder-gray-400 focus:border-yellow-500"
+                      className="w-full bg-white border-slate-300 text-slate-800 placeholder-slate-400 focus:border-blue-900"
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
                       Message
                     </label>
                     <Textarea
@@ -162,12 +162,12 @@ export default function Contact() {
                       placeholder="Tell us more about your inquiry..."
                       required
                       rows={6}
-                      className="w-full bg-gray-800 border-yellow-500/20 text-white placeholder-gray-400 focus:border-yellow-500"
+                      className="w-full bg-white border-slate-300 text-slate-800 placeholder-slate-400 focus:border-blue-900"
                     />
                   </div>
                   <Button
                     type="submit"
-                    className="w-full bg-yellow-500 hover:bg-yellow-400 text-black py-3 text-lg font-semibold transition-all duration-200 transform hover:scale-105"
+                    className="w-full bg-blue-900 hover:bg-blue-800 text-white py-3 text-lg font-semibold transition-all duration-200 transform hover:scale-105"
                   >
                     <Send className="w-5 h-5 mr-2" />
                     Send Message
@@ -185,31 +185,31 @@ export default function Contact() {
             {contactInfo.map((info, index) => (
               <Card
                 key={index}
-                className="p-4 sm:p-6 hover:shadow-lg hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-1 bg-gray-900 border-yellow-500/20"
+                className="p-4 sm:p-6 hover:shadow-lg hover:shadow-blue-900/10 transition-all duration-300 transform hover:-translate-y-1 bg-slate-50 border-blue-900/10"
               >
                 <CardContent className="p-0">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-yellow-500/10 p-3 rounded-lg border border-yellow-500/20">
-                      <info.icon className="w-5 sm:w-6 h-5 sm:h-6 text-yellow-400" />
+                    <div className="bg-blue-900/10 p-3 rounded-lg border border-blue-900/10">
+                      <info.icon className="w-5 sm:w-6 h-5 sm:h-6 text-blue-900" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-white mb-1 text-sm sm:text-base">{info.title}</h3>
-                      <p className="text-yellow-400 font-medium mb-1 text-sm sm:text-base">{info.details}</p>
-                      <p className="text-xs sm:text-sm text-gray-400">{info.description}</p>
+                      <h3 className="font-semibold text-slate-800 mb-1 text-sm sm:text-base">{info.title}</h3>
+                      <p className="text-blue-900 font-medium mb-1 text-sm sm:text-base">{info.details}</p>
+                      <p className="text-xs sm:text-sm text-slate-500">{info.description}</p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             ))}
 
-            <Card className="p-4 sm:p-6 bg-gray-900 border-yellow-500/20">
+            <Card className="p-4 sm:p-6 bg-slate-50 border-blue-900/10">
               <CardContent className="p-0">
-                <h3 className="font-semibold text-white mb-3 text-sm sm:text-base">Quick Response</h3>
-                <p className="text-xs sm:text-sm text-gray-400 mb-4">
+                <h3 className="font-semibold text-slate-800 mb-3 text-sm sm:text-base">Quick Response</h3>
+                <p className="text-xs sm:text-sm text-slate-600 mb-4">
                   We typically respond to all inquiries within 24 hours. For urgent matters, please call us directly
                   during business hours.
                 </p>
-                <div className="flex items-center space-x-2 text-xs sm:text-sm text-yellow-400">
+                <div className="flex items-center space-x-2 text-xs sm:text-sm text-blue-900">
                   <Clock className="w-4 h-4" />
                   <span>Average response time: 2-4 hours</span>
                 </div>

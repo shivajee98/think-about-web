@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 45 93% 47%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 60%;
-    --accent: 45 93% 47%;
-    --accent-foreground: 0 0% 0%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 45 93% 47% / 0.2;
-    --input: 45 93% 47% / 0.2;
-    --ring: 45 93% 47%;
+    --background: 248 250 252;
+    --foreground: 15 23 42;
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
+    --primary: 17 63 103;
+    --primary-foreground: 248 250 252;
+    --secondary: 241 245 249;
+    --secondary-foreground: 15 23 42;
+    --muted: 241 245 249;
+    --muted-foreground: 100 116 139;
+    --accent: 17 63 103;
+    --accent-foreground: 248 250 252;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 17 63 103;
     --radius: 0.75rem;
   }
 }
@@ -83,10 +83,10 @@
 @keyframes glow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
+    box-shadow: 0 0 20px rgba(17, 63, 103, 0.3);
   }
   50% {
-    box-shadow: 0 0 30px rgba(234, 179, 8, 0.5);
+    box-shadow: 0 0 30px rgba(17, 63, 103, 0.5);
   }
 }
 
@@ -121,35 +121,35 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #eab308;
+  background: #113f67;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f59e0b;
+  background: #0f2a44;
 }
 
-/* Dark theme overrides */
+/* Light theme overrides */
 body {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
-/* Yellow accent utilities */
+/* Blue accent utilities */
 .text-accent {
-  color: #eab308;
+  color: #113f67;
 }
 
 .bg-accent {
-  background-color: #eab308;
+  background-color: #113f67;
 }
 
 .border-accent {
-  border-color: #eab308;
+  border-color: #113f67;
 }
 
 /* Animation delay utilities */
@@ -163,4 +163,34 @@ body {
 
 .animation-delay-450 {
   animation-delay: 450ms;
+}
+
+/* Custom blue variants */
+.bg-blue-900 {
+  background-color: #113f67;
+}
+
+.text-blue-900 {
+  color: #113f67;
+}
+
+.border-blue-900 {
+  border-color: #113f67;
+}
+
+.hover\:bg-blue-800:hover {
+  background-color: #0f2a44;
+}
+
+.hover\:text-blue-900:hover {
+  color: #113f67;
+}
+
+.hover\:border-blue-800:hover {
+  border-color: #0f2a44;
+}
+
+/* Light silver backgrounds */
+.bg-slate-50 {
+  background-color: #f8fafc;
 }

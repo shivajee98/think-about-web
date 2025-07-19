@@ -55,15 +55,15 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="py-20 px-4 bg-black">
+    <section id="about" className="py-20 px-4 bg-slate-50">
       <div className="container mx-auto">
         <div
           className={`text-center mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">About Think About</h2>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">About Think About</h2>
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
             We're passionate about transforming education through technology and innovation, making quality learning
             accessible to everyone, everywhere.
           </p>
@@ -75,13 +75,13 @@ export default function About() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
             }`}
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">Our Mission</h3>
-            <p className="text-base sm:text-lg text-gray-300 mb-6">
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-6">Our Mission</h3>
+            <p className="text-base sm:text-lg text-slate-600 mb-6">
               At Think About, we believe that education is the key to unlocking human potential. Our mission is to
               democratize access to high-quality education by leveraging cutting-edge technology and innovative teaching
               methodologies.
             </p>
-            <p className="text-base sm:text-lg text-gray-300 mb-6">
+            <p className="text-base sm:text-lg text-slate-600 mb-6">
               We're committed to creating an inclusive learning environment where students from all backgrounds can
               thrive, grow, and achieve their dreams. Our expert instructors and comprehensive curriculum ensure that
               every student receives the support they need to succeed.
@@ -89,9 +89,9 @@ export default function About() {
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <stat.icon className="w-6 sm:w-8 h-6 sm:h-8 text-yellow-400 mx-auto mb-2" />
-                  <div className="text-xl sm:text-2xl font-bold text-yellow-400">{stat.value}</div>
-                  <div className="text-xs sm:text-sm text-gray-400">{stat.label}</div>
+                  <stat.icon className="w-6 sm:w-8 h-6 sm:h-8 text-blue-900 mx-auto mb-2" />
+                  <div className="text-xl sm:text-2xl font-bold text-blue-900">{stat.value}</div>
+                  <div className="text-xs sm:text-sm text-slate-500">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -103,13 +103,13 @@ export default function About() {
             }`}
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 to-yellow-400/20 rounded-3xl transform -rotate-6"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-blue-800/10 rounded-3xl transform -rotate-6"></div>
               <Image
                 src="/placeholder.svg?height=400&width=500"
                 alt="About Think About"
                 width={500}
                 height={400}
-                className="relative rounded-3xl shadow-2xl filter brightness-0 invert"
+                className="relative rounded-3xl shadow-2xl"
                 loading="lazy"
               />
             </div>
@@ -121,17 +121,17 @@ export default function About() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h3 className="text-2xl sm:text-3xl font-bold text-white text-center mb-12">Our Values</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold text-slate-800 text-center mb-12">Our Values</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {values.map((value, index) => (
               <Card
                 key={index}
-                className="text-center p-4 sm:p-6 hover:shadow-lg hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-2 bg-gray-900 border-yellow-500/20"
+                className="text-center p-4 sm:p-6 hover:shadow-lg hover:shadow-blue-900/10 transition-all duration-300 transform hover:-translate-y-2 bg-white border-blue-900/10"
               >
                 <CardContent className="p-0">
                   <div className="text-3xl sm:text-4xl mb-4">{value.icon}</div>
-                  <h4 className="text-lg sm:text-xl font-semibold text-white mb-3">{value.title}</h4>
-                  <p className="text-sm sm:text-base text-gray-400">{value.description}</p>
+                  <h4 className="text-lg sm:text-xl font-semibold text-slate-800 mb-3">{value.title}</h4>
+                  <p className="text-sm sm:text-base text-slate-600">{value.description}</p>
                 </CardContent>
               </Card>
             ))}

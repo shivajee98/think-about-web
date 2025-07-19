@@ -13,7 +13,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-4 bg-black">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-4 bg-slate-50">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div
@@ -22,12 +22,12 @@ export default function Hero() {
             }`}
           >
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-slate-800 leading-tight">
                 Think
-                <span className="block text-yellow-400 animate-pulse">Beyond</span>
-                <span className="block text-gray-300">Limits</span>
+                <span className="block text-blue-900 animate-pulse">Beyond</span>
+                <span className="block text-slate-600">Limits</span>
               </h1>
-              <p className="text-lg sm:text-xl text-gray-300 max-w-lg">
+              <p className="text-lg sm:text-xl text-slate-600 max-w-lg">
                 Unlock your potential with our innovative educational technology platform. Learn, grow, and succeed with
                 personalized learning experiences.
               </p>
@@ -36,7 +36,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25"
+                className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-900/25"
               >
                 Start Learning
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -44,7 +44,7 @@ export default function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-yellow-500 hover:border-yellow-400 text-yellow-400 hover:bg-yellow-500 hover:text-black px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200 transform hover:scale-105 bg-transparent"
+                className="border-2 border-blue-900 hover:border-blue-800 text-blue-900 hover:bg-blue-900 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200 transform hover:scale-105 bg-transparent"
               >
                 <Play className="mr-2 h-5 w-5" />
                 Watch Demo
@@ -53,16 +53,16 @@ export default function Hero() {
 
             <div className="flex flex-wrap items-center gap-6 sm:gap-8 pt-8">
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-yellow-400">50K+</div>
-                <div className="text-gray-400 text-sm sm:text-base">Students</div>
+                <div className="text-2xl sm:text-3xl font-bold text-blue-900">50K+</div>
+                <div className="text-slate-500 text-sm sm:text-base">Students</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-yellow-400">200+</div>
-                <div className="text-gray-400 text-sm sm:text-base">Courses</div>
+                <div className="text-2xl sm:text-3xl font-bold text-blue-900">200+</div>
+                <div className="text-slate-500 text-sm sm:text-base">Courses</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-yellow-400">95%</div>
-                <div className="text-gray-400 text-sm sm:text-base">Success Rate</div>
+                <div className="text-2xl sm:text-3xl font-bold text-blue-900">95%</div>
+                <div className="text-slate-500 text-sm sm:text-base">Success Rate</div>
               </div>
             </div>
           </div>
@@ -73,17 +73,17 @@ export default function Hero() {
             }`}
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 to-yellow-400/20 rounded-3xl transform rotate-6"></div>
-              <div className="relative bg-gray-900 rounded-3xl p-6 sm:p-8 shadow-2xl border border-yellow-500/20">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-blue-800/10 rounded-3xl transform rotate-6"></div>
+              <div className="relative bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-blue-900/10">
                 <Image
                   src="/placeholder.svg?height=400&width=500"
                   alt="Educational Technology"
                   width={500}
                   height={400}
-                  className="w-full h-auto rounded-2xl filter brightness-0 invert"
+                  className="w-full h-auto rounded-2xl"
                   priority
                 />
-                <div className="absolute -top-4 -right-4 bg-yellow-500 text-black px-4 py-2 rounded-full font-semibold transform rotate-12 shadow-lg">
+                <div className="absolute -top-4 -right-4 bg-blue-900 text-white px-4 py-2 rounded-full font-semibold transform rotate-12 shadow-lg">
                   New Courses!
                 </div>
               </div>

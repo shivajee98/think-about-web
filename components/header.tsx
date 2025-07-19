@@ -28,89 +28,82 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg border-b border-yellow-500/20" : "bg-transparent"
+        isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-blue-900/10" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <Image
-              src="/logo.svg"
-              alt="Think About Logo"
-              width={40}
-              height={40}
-              className="w-10 h-10 filter brightness-0 invert"
-              priority
-            />
-            <span className="text-4xl md:text-5xl font-bold text-yellow-400 animate-pulse">Think About</span>
+            <Image src="/logo.svg" alt="Think About Logo" width={40} height={40} className="w-10 h-10" priority />
+            <span className="text-4xl md:text-5xl font-bold text-blue-900 animate-pulse">Think About</span>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 font-medium"
+              className="text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("courses")}
-              className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 font-medium"
+              className="text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
             >
               Courses
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 font-medium"
+              className="text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
             >
               About Us
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 font-medium"
+              className="text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
             >
               Contact
             </button>
-            <Button className="bg-yellow-500 hover:bg-yellow-400 text-black px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105 font-semibold">
+            <Button className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105 font-semibold">
               Get Started
             </Button>
           </nav>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden p-2 text-yellow-400" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <button className="md:hidden p-2 text-blue-900" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-yellow-500/20">
+          <nav className="md:hidden mt-4 pb-4 border-t border-blue-900/10">
             <div className="flex flex-col space-y-4 pt-4">
               <button
                 onClick={() => scrollToSection("home")}
-                className="text-left text-gray-300 hover:text-yellow-400 transition-colors duration-200 font-medium"
+                className="text-left text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection("courses")}
-                className="text-left text-gray-300 hover:text-yellow-400 transition-colors duration-200 font-medium"
+                className="text-left text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
               >
                 Courses
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-left text-gray-300 hover:text-yellow-400 transition-colors duration-200 font-medium"
+                className="text-left text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
               >
                 About Us
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-left text-gray-300 hover:text-yellow-400 transition-colors duration-200 font-medium"
+                className="text-left text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
               >
                 Contact
               </button>
-              <Button className="bg-yellow-500 hover:bg-yellow-400 text-black px-6 py-2 rounded-full w-fit font-semibold">
+              <Button className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded-full w-fit font-semibold">
                 Get Started
               </Button>
             </div>
