@@ -8,7 +8,7 @@ export default function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false)
 
   // Replace with your actual WhatsApp group/channel link
-  const whatsappLink = "https://wa.me/+919876543210?text=Hi! I'm interested in learning more about Think About courses."
+  const whatsappLink = "https://wa.me/+918102117024?text=Hi! I'm interested in learning more about Think About courses."
 
   const handleWhatsAppClick = () => {
     window.open(whatsappLink, "_blank", "noopener,noreferrer")
