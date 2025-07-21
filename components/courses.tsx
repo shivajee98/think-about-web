@@ -71,36 +71,6 @@ export default function Courses() {
     },
   ]
 
-  const upcomingCourses = [
-    {
-      title: "AI & Machine Learning Fundamentals",
-      description: "Introduction to artificial intelligence and ML algorithms",
-      image: "/placeholder.svg?height=200&width=300",
-      startDate: "March 15, 2024",
-      duration: "10 weeks",
-      price: "₹4,999",
-      earlyBird: true,
-    },
-    {
-      title: "Blockchain Development",
-      description: "Build decentralized applications on various blockchain platforms",
-      image: "/placeholder.svg?height=200&width=300",
-      startDate: "April 1, 2024",
-      duration: "12 weeks",
-      price: "₹4,999",
-      earlyBird: false,
-    },
-    {
-      title: "Cybersecurity Essentials",
-      description: "Protect systems and networks from digital attacks",
-      image: "/placeholder.svg?height=200&width=300",
-      startDate: "April 20, 2024",
-      duration: "14 weeks",
-      price: "₹3,999",
-      earlyBird: true,
-    },
-  ]
-
   const onlineCourses = [
     {
       title: "JavaScript Mastery",
@@ -155,12 +125,7 @@ export default function Courses() {
             >
               Offline Courses
             </TabsTrigger>
-            <TabsTrigger
-              value="upcoming"
-              className="text-base sm:text-lg py-3 text-slate-600 data-[state=active]:text-white data-[state=active]:bg-blue-900"
-            >
-              Upcoming
-            </TabsTrigger>
+
             <TabsTrigger
               value="online"
               className="text-base sm:text-lg py-3 text-slate-600 data-[state=active]:text-white data-[state=active]:bg-blue-900"
@@ -194,8 +159,7 @@ export default function Courses() {
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
-                    <CardTitle className="text-xl mb-2 text-slate-800">{course.title}</CardTitle>
-                    <CardDescription className="text-slate-600 mb-4">{course.description}</CardDescription>
+                    <CardTitle className="text-xl mb-2 text-slate-800">{course.description}</CardTitle>
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center text-sm text-slate-500">
                         <Clock className="w-4 h-4 mr-2" />
@@ -220,62 +184,6 @@ export default function Courses() {
             </div>
           </TabsContent>
 
-          <TabsContent value="upcoming">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {upcomingCourses.map((course, index) => (
-                <Card
-                  key={index}
-                  className={`group hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 transform hover:-translate-y-2 bg-slate-50 border-blue-900/10 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                    }`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  <CardHeader className="p-0">
-                    <div className="relative overflow-hidden rounded-t-lg">
-                      <Image
-                        src={course.image || "/placeholder.svg"}
-                        alt={course.title}
-                        width={300}
-                        height={200}
-                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                        loading="lazy"
-                      />
-                      <Badge className="absolute top-4 left-4 bg-slate-600 hover:bg-slate-500 text-white">
-                        Coming Soon
-                      </Badge>
-                      {course.earlyBird && (
-                        <Badge className="absolute top-4 right-4 bg-blue-900 hover:bg-blue-800 text-white font-semibold">
-                          Early Bird
-                        </Badge>
-                      )}
-                    </div>
-                  </CardHeader>
-                  <CardContent className="p-6">
-                    <CardTitle className="text-xl mb-2 text-slate-800">{course.title}</CardTitle>
-                    <CardDescription className="text-slate-600 mb-4">{course.description}</CardDescription>
-                    <div className="space-y-2 mb-4">
-                      <div className="flex items-center text-sm text-slate-500">
-                        <Calendar className="w-4 h-4 mr-2" />
-                        Starts {course.startDate}
-                      </div>
-                      <div className="flex items-center text-sm text-slate-500">
-                        <Clock className="w-4 h-4 mr-2" />
-                        {course.duration}
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xl sm:text-2xl font-bold text-blue-900">{course.price}</span>
-                      <Button
-                        variant="outline"
-                        className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white bg-transparent"
-                      >
-                        Pre-Register
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
 
           <TabsContent value="online">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -297,7 +205,7 @@ export default function Courses() {
                         loading="lazy"
                       />
                       <Badge className="absolute top-4 left-4 bg-blue-900 hover:bg-blue-800 text-white font-semibold">
-                        Online
+                        Upcoming
                       </Badge>
                     </div>
                   </CardHeader>

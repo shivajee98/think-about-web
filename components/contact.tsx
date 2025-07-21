@@ -65,7 +65,7 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "Visit Us",
-      details: "Mithanpura Muzzafarpur, Bihar",
+      details: "Mithanpura Muzaffarpur, Bihar",
       description: "Come visit our main campus",
     },
     {

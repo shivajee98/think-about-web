@@ -65,7 +65,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3 text-slate-300 text-sm sm:text-base">
                 <MapPin className="w-4 sm:w-5 h-4 sm:h-5 text-blue-300" />
-                <span>Mithanpura Muzzafarpur, Bihar</span>
+                <span>Mithanpura Muzaffarpur, Bihar</span>
               </div>
             </div>
           </div>

@@ -96,3 +96,4 @@ const config: Config = {
   plugins: [require("tailwindcss-animate")],
 };
 export default config;
+// <link rel="stylesheet" href="https://use.typekit.net/vvg0muu.css">

@@ -34,8 +34,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <Image src="/logo.svg" alt="Think About Logo" width={40} height={40} className="w-10 h-10" priority />
-            <span className="text-4xl md:text-5xl font-bold text-blue-900 animate-pulse">Think About</span>
+            <Image src="/logo.svg" alt="Think About Logo" width={100} height={40} className="w-100 h-100" priority />
           </div>
 
           {/* Desktop Navigation */}
