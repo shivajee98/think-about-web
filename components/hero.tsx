@@ -70,7 +70,7 @@ export default function Hero() {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-blue-900" />
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">5000+</div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">200+</div>
               <div className="text-slate-600 font-medium">Students Trained</div>
             </div>
 
@@ -86,7 +86,7 @@ export default function Hero() {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <BookOpen className="w-8 h-8 text-blue-900" />
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">50+</div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">10+</div>
               <div className="text-slate-600 font-medium">Expert Instructors</div>
             </div>
 
