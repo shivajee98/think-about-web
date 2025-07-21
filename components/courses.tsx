@@ -261,7 +261,7 @@ export default function Courses() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
                     <Badge className="absolute top-4 left-4 bg-green-600 hover:bg-green-700 text-white font-semibold">
-                      Online
+                      Upcoming
                     </Badge>
                   </div>
 
