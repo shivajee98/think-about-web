@@ -8,6 +8,10 @@ export default function CursorSpotlight() {
 
   useEffect(() => {
     let animationFrame: number
+    let targetX = 0
+    let targetY = 0
+    let currentX = 0
+    let currentY = 0
 
     const updateMousePosition = (e: MouseEvent | TouchEvent) => {
       let clientX: number, clientY: number
@@ -26,25 +30,30 @@ export default function CursorSpotlight() {
         clientY = mouseEvent.clientY
       }
 
-      // Cancel previous animation frame
-      if (animationFrame) {
-        cancelAnimationFrame(animationFrame)
-      }
-
-      // Use requestAnimationFrame for smooth animation
-      animationFrame = requestAnimationFrame(() => {
-        setMousePosition({ x: clientX, y: clientY })
-        setIsVisible(true)
-      })
+      targetX = clientX
+      targetY = clientY
+      setIsVisible(true)
     }
 
-    const handleMouseLeave = () => {
-      setIsVisible(false)
+    const animateSpotlight = () => {
+      // Smooth interpolation for lazy following effect
+      currentX += (targetX - currentX) * 0.1
+      currentY += (targetY - currentY) * 0.1
+
+      setMousePosition({ x: currentX, y: currentY })
+      animationFrame = requestAnimationFrame(animateSpotlight)
     }
 
-    // Mouse events for desktop
+    const handleMouseEnter = () => setIsVisible(true)
+    const handleMouseLeave = () => setIsVisible(false)
+
+    // Start animation loop
+    animateSpotlight()
+
+    // Add event listeners
     window.addEventListener("mousemove", updateMousePosition)
-    window.addEventListener("mouseleave", handleMouseLeave)
+    document.addEventListener("mouseenter", handleMouseEnter)
+    document.addEventListener("mouseleave", handleMouseLeave)
 
     // Touch events for mobile
     window.addEventListener("touchmove", updateMousePosition, { passive: true })
@@ -52,25 +61,24 @@ export default function CursorSpotlight() {
     window.addEventListener("touchend", handleMouseLeave)
 
     return () => {
+      cancelAnimationFrame(animationFrame)
       window.removeEventListener("mousemove", updateMousePosition)
-      window.removeEventListener("mouseleave", handleMouseLeave)
       window.removeEventListener("touchmove", updateMousePosition)
       window.removeEventListener("touchstart", updateMousePosition)
       window.removeEventListener("touchend", handleMouseLeave)
-
-      if (animationFrame) {
-        cancelAnimationFrame(animationFrame)
-      }
+      document.removeEventListener("mouseenter", handleMouseEnter)
+      document.removeEventListener("mouseleave", handleMouseLeave)
     }
   }, [])
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300"
+      className="fixed inset-0 pointer-events-none z-0 spotlight-container"
       style={{
-        opacity: isVisible ? 1 : 0,
-        background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(17, 63, 103, 0.06), transparent 40%)`,
-        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+        background: isVisible
+          ? `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(17, 63, 103, 0.05), transparent 40%)`
+          : "transparent",
+        transition: "background 0.3s ease",
       }}
     />
   )
