@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { SignedIn, SignedOut, UserButton, SignInButton, SignUpButton } from "@clerk/nextjs"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -81,10 +82,28 @@ export default function Header() {
 
           {/* Desktop Auth Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="ghost" className="text-slate-700 hover:text-blue-900 hover:bg-blue-50">
-              Login
-            </Button>
-            <Button className="bg-blue-900 hover:bg-blue-800 text-white">Sign Up</Button>
+            <SignedOut>
+              <SignInButton>
+                <Button variant="ghost" className="text-slate-700 hover:text-blue-900 hover:bg-blue-50">
+                  Login
+                </Button>
+              </SignInButton>
+              <SignUpButton>
+                <Button className="bg-blue-900 hover:bg-blue-800 text-white">
+                  Sign Up
+                </Button>
+              </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+              <UserButton
+                appearance={{
+                  elements: {
+                    avatarBox: "w-10 h-10",
+                  },
+                }}
+                showName
+              />
+            </SignedIn>
           </div>
 
           {/* Mobile Menu Button */}
@@ -139,10 +158,30 @@ export default function Header() {
 
               {/* Mobile Auth Buttons */}
               <div className="pt-4 border-t border-blue-900/10 space-y-3">
-                <Button variant="ghost" className="w-full text-slate-700 hover:text-blue-900 hover:bg-blue-50">
-                  Login
-                </Button>
-                <Button className="w-full bg-blue-900 hover:bg-blue-800 text-white">Sign Up</Button>
+                <SignedOut>
+                  <SignInButton>
+                    <Button variant="ghost" className="w-full text-slate-700 hover:text-blue-900 hover:bg-blue-50">
+                      Login
+                    </Button>
+                  </SignInButton>
+                  <SignUpButton>
+                    <Button className="w-full bg-blue-900 hover:bg-blue-800 text-white">
+                      Sign Up
+                    </Button>
+                  </SignUpButton>
+                </SignedOut>
+                <SignedIn>
+                  <div className="flex justify-center py-2">
+                    <UserButton
+                      appearance={{
+                        elements: {
+                          avatarBox: "w-10 h-10",
+                        },
+                      }}
+                      showName
+                    />
+                  </div>
+                </SignedIn>
               </div>
             </div>
           </div>
