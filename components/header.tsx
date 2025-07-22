@@ -1,18 +1,17 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Menu, X } from "lucide-react"
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      setIsScrolled(window.scrollY > 10)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
@@ -22,120 +21,107 @@ export default function Header() {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
-      setIsMobileMenuOpen(false)
+      setIsMenuOpen(false)
     }
   }
 
+  const navItems = [
+    { label: "Home", id: "hero" },
+    { label: "Courses", id: "courses" },
+    { label: "About", id: "about" },
+    { label: "Book Meeting", id: "calendar-booking" },
+    { label: "Contact", id: "contact" },
+  ]
+
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-blue-900/10" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <Link href="/">
-              <Image src="/logo.svg" alt="Think About Logo" width={100} height={40} className="w-100 h-100" priority />
-            </Link>
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          {/* Logo */}
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-900 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg sm:text-xl">T</span>
+            </div>
+            <div>
+              <h1 className="text-xl sm:text-2xl font-bold text-slate-800">
+                <span className="text-blue-900">Think</span> About
+              </h1>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6">
-            <Link href="/" className="text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium">
-              Home
-            </Link>
-            <button
-              onClick={() => scrollToSection("courses")}
-              className="text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
-            >
-              Courses
-            </button>
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
-            >
-              About Us
-            </button>
-            <Link
-              href="/career"
-              className="text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
-            >
-              Career
-            </Link>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
-            >
-              Contact
-            </button>
-
-            {/* Auth Buttons */}
-            <div className="flex items-center space-x-3 ml-4">
-              <Button variant="ghost" className="text-slate-600 hover:text-blue-900 hover:bg-blue-50 font-medium">
-                Login
-              </Button>
-              <Button className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105 font-semibold">
-                Sign Up
-              </Button>
-            </div>
+          <nav className="hidden lg:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-slate-700 hover:text-blue-900 font-medium transition-colors duration-200 relative group"
+              >
+                {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-900 transition-all duration-200 group-hover:w-full"></span>
+              </button>
+            ))}
           </nav>
 
+          {/* Desktop Auth Buttons */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <Link href="/career">
+              <Button variant="ghost" className="text-slate-700 hover:text-blue-900 hover:bg-blue-50">
+                Career
+              </Button>
+            </Link>
+            <Button variant="ghost" className="text-slate-700 hover:text-blue-900 hover:bg-blue-50">
+              Login
+            </Button>
+            <Button className="bg-blue-900 hover:bg-blue-800 text-white px-6">Sign Up</Button>
+          </div>
+
           {/* Mobile Menu Button */}
-          <button className="lg:hidden p-2 text-blue-900" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors duration-200"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X className="w-6 h-6 text-slate-700" /> : <Menu className="w-6 h-6 text-slate-700" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <nav className="lg:hidden mt-4 pb-4 border-t border-blue-900/10">
-            <div className="flex flex-col space-y-4 pt-4">
-              <Link
-                href="/"
-                className="text-left text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
-              >
-                Home
-              </Link>
-              <button
-                onClick={() => scrollToSection("courses")}
-                className="text-left text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
-              >
-                Courses
-              </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-left text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
-              >
-                About Us
-              </button>
-              <Link
-                href="/career"
-                className="text-left text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
-              >
-                Career
-              </Link>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-left text-slate-600 hover:text-blue-900 transition-colors duration-200 font-medium"
-              >
-                Contact
-              </button>
-
-              {/* Mobile Auth Buttons */}
-              <div className="flex flex-col space-y-3 pt-4 border-t border-blue-900/10">
+        {isMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-blue-900/10 shadow-lg">
+            <nav className="container mx-auto px-4 py-4 space-y-4">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block w-full text-left text-slate-700 hover:text-blue-900 font-medium py-2 transition-colors duration-200"
+                >
+                  {item.label}
+                </button>
+              ))}
+              <div className="pt-4 border-t border-slate-200 space-y-3">
+                <Link href="/career" className="block">
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start text-slate-700 hover:text-blue-900 hover:bg-blue-50"
+                  >
+                    Career
+                  </Button>
+                </Link>
                 <Button
                   variant="ghost"
-                  className="text-left justify-start text-slate-600 hover:text-blue-900 hover:bg-blue-50 font-medium"
+                  className="w-full justify-start text-slate-700 hover:text-blue-900 hover:bg-blue-50"
                 >
                   Login
                 </Button>
-                <Button className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded-full w-fit font-semibold">
-                  Sign Up
-                </Button>
+                <Button className="w-full bg-blue-900 hover:bg-blue-800 text-white">Sign Up</Button>
               </div>
-            </div>
-          </nav>
+            </nav>
+          </div>
         )}
       </div>
     </header>
