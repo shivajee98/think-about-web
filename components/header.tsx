@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useAuth, UserButton } from "@clerk/nextjs"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -71,14 +72,20 @@ export default function Header() {
             </button>
 
             {/* Auth Buttons */}
-            <div className="flex items-center space-x-3 ml-4">
-              <Button variant="ghost" className="text-slate-600 hover:text-blue-900 hover:bg-blue-50 font-medium">
-                Login
-              </Button>
-              <Button className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105 font-semibold">
-                Sign Up
-              </Button>
-            </div>
+            {/* Show UserButton if logged in, else show Login/Sign Up */}
+            {/* Assuming useAuth from Clerk */}
+            {useAuth().isSignedIn ? (
+              <UserButton afterSignOutUrl="/" />
+            ) : (
+              <>
+                <Button variant="ghost" className="text-slate-600 hover:text-blue-900 hover:bg-blue-50 font-medium">
+                  Login
+                </Button>
+                <Button className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105 font-semibold">
+                  Sign Up
+                </Button>
+              </>
+            )}
           </nav>
 
           {/* Mobile Menu Button */}
