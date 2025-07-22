@@ -41,13 +41,33 @@ export default function Contact() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    // Reset form
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await res.json()
+
+      if (data.success) {
+        console.log("Email sent!")
+        alert("Message sent successfully!")
+      } else {
+        console.error("Email failed:", data.error)
+        alert("Failed to send message. Please try again.")
+      }
+    } catch (err) {
+      console.error("Fetch error:", err)
+      alert("Unexpected error occurred.")
+    }
+
     setFormData({ name: "", email: "", subject: "", message: "" })
   }
+
 
   const contactInfo = [
     {
@@ -80,9 +100,8 @@ export default function Contact() {
     <section id="contact" className="py-20 px-4 bg-white">
       <div className="container mx-auto">
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">Get In Touch</h2>
           <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
@@ -93,9 +112,8 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
           <div
-            className={`lg:col-span-2 transition-all duration-1000 delay-200 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-            }`}
+            className={`lg:col-span-2 transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+              }`}
           >
             <Card className="shadow-lg bg-slate-50 border-blue-900/10">
               <CardHeader>
@@ -178,9 +196,8 @@ export default function Contact() {
           </div>
 
           <div
-            className={`space-y-6 transition-all duration-1000 delay-400 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
-            }`}
+            className={`space-y-6 transition-all duration-1000 delay-400 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+              }`}
           >
             {contactInfo.map((info, index) => (
               <Card
