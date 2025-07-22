@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -26,19 +28,17 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-blue-900/10" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-blue-900/10" : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-900 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg sm:text-xl">T</span>
-            </div>
-            <div>
-              <h1 className="text-xl sm:text-2xl font-bold text-blue-900 animate-pulse">Think About</h1>
+            <div className="flex items-center space-x-3">
+              <Link href="/">
+                <Image src="/logo.svg" alt="Think About Logo" width={130} height={40} className="w-100 h-100" priority />
+              </Link>
             </div>
           </div>
 
