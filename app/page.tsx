@@ -2,7 +2,7 @@ import Header from "@/components/header"
 import Hero from "@/components/hero"
 import Courses from "@/components/courses"
 import About from "@/components/about"
-import CalendarBooking from "@/components/calendar-booking"
+import CalendlyBooking from "@/components/calendly-booking"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import CursorSpotlight from "@/components/cursor-spotlight"
@@ -16,7 +16,7 @@ export default function Home() {
       <Hero />
       <Courses />
       <About />
-      <CalendarBooking />
+      <CalendlyBooking />
       <Contact />
       <Footer />
       <WhatsAppButton />
