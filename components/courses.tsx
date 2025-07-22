@@ -6,9 +6,14 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Clock, Users, Star, MapPin, Calendar } from "lucide-react"
+import EnrollForm from "@/components/EnrollForm"
+
 
 export default function Courses() {
   const [isVisible, setIsVisible] = useState(false)
+  const [showForm, setShowForm] = useState(false)
+  const [selectedCourseTitle, setSelectedCourseTitle] = useState("")
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -140,9 +145,8 @@ export default function Courses() {
     <section id="courses" className="py-20 px-4 bg-white">
       <div className="container mx-auto">
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">Our Courses</h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -172,9 +176,8 @@ export default function Courses() {
               {offlineCourses.map((course, index) => (
                 <div
                   key={index}
-                  className={`group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl hover:shadow-blue-900/10 transition-all duration-500 transform hover:-translate-y-2 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                  }`}
+                  className={`group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl hover:shadow-blue-900/10 transition-all duration-500 transform hover:-translate-y-2 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
                   style={{ transitionDelay: `${index * 150}ms` }}
                 >
                   <div className="relative overflow-hidden">
@@ -193,8 +196,7 @@ export default function Courses() {
                   </div>
 
                   <div className="p-8">
-                    <h3 className="text-2xl font-bold text-blue-900 mb-2">{course.title}</h3>
-                    <h4 className="text-lg font-semibold text-slate-700 mb-3">{course.subtitle}</h4>
+                    <h3 className="text-2xl font-bold text-blue-900 mb-2">{course.subtitle}</h3>
                     <p className="text-slate-600 mb-6 leading-relaxed">{course.description}</p>
 
                     <div className="grid grid-cols-2 gap-4 mb-6">
@@ -230,9 +232,16 @@ export default function Courses() {
 
                     <div className="flex items-center justify-between">
                       <span className="text-3xl font-bold text-blue-900">{course.price}</span>
-                      <Button className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-8 py-3">
+                      <Button
+                        className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-8 py-3"
+                        onClick={() => {
+                          setSelectedCourseTitle(course.title)
+                          setShowForm(true)
+                        }}
+                      >
                         Enroll Now
                       </Button>
+
                     </div>
                   </div>
                 </div>
@@ -245,9 +254,8 @@ export default function Courses() {
               {onlineCourses.map((course, index) => (
                 <div
                   key={index}
-                  className={`group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl hover:shadow-blue-900/10 transition-all duration-500 transform hover:-translate-y-2 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                  }`}
+                  className={`group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl hover:shadow-blue-900/10 transition-all duration-500 transform hover:-translate-y-2 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
                   style={{ transitionDelay: `${index * 150}ms` }}
                 >
                   <div className="relative overflow-hidden">
@@ -303,9 +311,16 @@ export default function Courses() {
 
                     <div className="flex items-center justify-between">
                       <span className="text-3xl font-bold text-blue-900">{course.price}</span>
-                      <Button className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-8 py-3">
+                      <Button
+                        className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-8 py-3"
+                        onClick={() => {
+                          setSelectedCourseTitle(course.title)
+                          setShowForm(true)
+                        }}
+                      >
                         Start Learning
                       </Button>
+
                     </div>
                   </div>
                 </div>
@@ -314,6 +329,7 @@ export default function Courses() {
           </TabsContent>
         </Tabs>
       </div>
+      <EnrollForm open={showForm} onClose={() => setShowForm(false)} courseTitle={selectedCourseTitle} />
     </section>
   )
 }

@@ -54,7 +54,6 @@ export default function Contact() {
       const data = await res.json()
 
       if (data.success) {
-        console.log("Email sent!")
         alert("Message sent successfully!")
       } else {
         console.error("Email failed:", data.error)
