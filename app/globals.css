@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+
+ /* Clerk custom styling */
+
+.cl-internal-pak4nu{
+    height: 0px ;
+}
+.cl-internal-1q4rk2m{
+    color: rgba(0, 0, 0, 0)
+}
+.cl-internal-5ghyhf{
+    color: rgba(0, 0, 0, 0)
+}
+
+.cl-internal-1j1lbor{
+    color: rgba(0, 0, 0, 0)
+}
+
+.cl-internal-vorlia > :not(:first-of-type){
+    padding: 0px;
+    height: 0px;
+}
+.cl-internal-fqc41u{
+    color: rgba(0, 0, 0, 0);
+    padding: 0px;
+    height: 0px;
+}
+.cl-internal-fcx671{
+    color: rgba(0, 0, 0, 0);
+    height: 0px;
+}
+.cl-internal-1k7jtru{
+    background: white;
+}
+
+
 @layer base {
   :root {
     --background: 248 250 252;
