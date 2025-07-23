@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { ClerkProvider } from "@clerk/nextjs"
+import { Analytics } from "@vercel/analytics/next"
 
 // Prevent FontAwesome from adding its CSS since we did it manually above
 config.autoAddCss = false
@@ -82,6 +83,7 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
+      <Analytics/>
       <html lang="en" className={inter.variable} suppressHydrationWarning>
         <head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
