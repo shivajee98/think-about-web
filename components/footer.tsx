@@ -29,7 +29,7 @@ export default function Footer() {
   ]
 
   const socialLinks = [
-    { icon: Twitter, href: "x.com/ThinkAbout__in", label: "Twitter" },
+    { icon: Twitter, href: "https://x.com/ThinkAbout__in", label: "Twitter" },
     { icon: Instagram, href: "https://www.instagram.com/thinkabout.official/", label: "Instagram" },
     { icon: Linkedin, href: "https://www.linkedin.com/company/107836984/admin/dashboard/", label: "LinkedIn" },
   ]
