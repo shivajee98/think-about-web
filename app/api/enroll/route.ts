@@ -20,7 +20,7 @@ export async function POST(req: Request) {
 
         const data = await resend.emails.send({
             from: 'Enrollment Bot <onboarding@resend.dev>',
-            to: 'ultimateintmater@gmail.com',
+            to: 'care@thinkabout.in',
             subject: `New Enrollment: ${courseTitle}`,
             html: messageHTML,
         })

@@ -11,7 +11,7 @@ export async function POST(req: Request) {
     try {
         const data = await resend.emails.send({
             from: 'Contact Form <onboarding@resend.dev>', // your verified sender
-            to: ['shivajeelatest@gmail.com','ultimateintmater@gmail.com'], // your real email
+            to: ['care@thinkabout.in'], // your real email
             subject: `New Contact Form Submission: ${subject}`,
             html: `
         <p><strong>Name:</strong> ${name}</p>
