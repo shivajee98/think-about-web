@@ -69,7 +69,7 @@ export default function EnrollForm({
                             onChange={handleChange}
                             value={formData.name}
                             className="bg-white border border-black text-black placeholder:text-gray-500"
-                            placeholder="e.g. Shivajee Kumar"
+                            placeholder="Your Name"
                         />
                     </div>
 
@@ -84,7 +84,7 @@ export default function EnrollForm({
                             onChange={handleChange}
                             value={formData.email}
                             className="bg-white border border-black text-black placeholder:text-gray-500"
-                            placeholder="e.g. you@example.com"
+                            placeholder="you@example.com"
                         />
                     </div>
 
@@ -99,7 +99,7 @@ export default function EnrollForm({
                             onChange={handleChange}
                             value={formData.phone}
                             className="bg-white border border-black text-black placeholder:text-gray-500"
-                            placeholder="e.g. +91 98765 43210"
+                            placeholder="+91 "
                         />
                     </div>
 
@@ -113,7 +113,7 @@ export default function EnrollForm({
                             onChange={handleChange}
                             value={formData.college}
                             className="bg-white border border-black text-black placeholder:text-gray-500"
-                            placeholder="e.g. MIT Pune"
+                            placeholder="Your College"
                         />
                     </div>
 
