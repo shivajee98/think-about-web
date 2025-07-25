@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react"
+import { Instagram, Linkedin, Mail, Phone, MapPin, X } from "lucide-react"
 
 export default function Footer() {
   const quickLinks = [
@@ -13,8 +13,8 @@ export default function Footer() {
   ]
 
   const courses = [
-    { name: "Programming", href: "#" },
-    { name: "Data Science", href: "#" },
+    { name: "Java", href: "#" },
+    { name: "c++", href: "#" },
     { name: "UX/UI Design", href: "#" },
     { name: "Digital Marketing", href: "#" },
     { name: "Cybersecurity", href: "#" },
@@ -29,7 +29,7 @@ export default function Footer() {
   ]
 
   const socialLinks = [
-    { icon: Twitter, href: "https://x.com/ThinkAbout__in", label: "Twitter" },
+    { icon: X, href: "https://x.com/ThinkAbout__in", label: "Twitter" },
     { icon: Instagram, href: "https://www.instagram.com/thinkabout.official/", label: "Instagram" },
     { icon: Linkedin, href: "https://www.linkedin.com/company/107836984/admin/dashboard/", label: "LinkedIn" },
   ]
