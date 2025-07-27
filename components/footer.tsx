@@ -41,14 +41,14 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
-              <Image
-                src="/logo.svg"
-                alt="Think About Logo"
-                width={40}
-                height={40}
-                className="w-10 h-10 filter brightness-0 invert"
-              />
-              <span className="text-xl sm:text-2xl font-bold text-blue-300">Think About</span>
+              <div className="text-xl sm:text-2xl font-bold text-blue-300">
+                <Image
+                alt="Try"
+                src="/try.png"
+                width={700}
+                height={100}
+                />
+                </div>
             </div>
             <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
               Transforming education through technology and innovation. Join thousands of students worldwide in their
