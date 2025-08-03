@@ -2,7 +2,7 @@ export const TESTIMONIALS = [
   {
     id: 1,
     name: "Ansh Pathak",
-    role: "Wroks At Tech Mahindra",
+    role: "Works At Tech Mahindra",
     content:
       "Think About’s hands-on Java & DSA track turned theory into muscle memory. Their mock-interview series gave me the confidence to crack Tech Mahindra on the first attempt!",
     rating: 5,
@@ -38,7 +38,7 @@ export const TESTIMONIALS = [
   {
     id: 5,
     name: "Chandan Kumar",
-    role: "Site Engineer, Jammu & Kashmir Airport project",
+    role: "Intern At Jammu & Kashmir Airport project",
     content:
       "Structural-design simulations on Think About’s Civil Engineering track sharpened my AutoCAD skills. The alumni referral network opened the door to the airport expansion project.",
     rating: 5,
@@ -65,7 +65,7 @@ export const TESTIMONIALS = [
   {
     id: 8,
     name: "Sakshi",
-    role: "CEO, TechStart",
+    role: "Employed At TechStart",
     content:
       "Even as a founder, I upskilled with Think About’s Product-Management masterclass. Insights from industry mentors helped us 2× our feature-release velocity.",
     rating: 5,
