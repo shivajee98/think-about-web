@@ -7,6 +7,7 @@ import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import CursorSpotlight from "@/components/cursor-spotlight"
 import WhatsAppButton from "@/components/whatsapp-button"
+import TestimonialSection from "@/components/testimonial"
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Courses />
       <About />
       <CalendlyBooking />
+      <TestimonialSection />
       <Contact />
       <Footer />
       <WhatsAppButton />
