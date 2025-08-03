@@ -39,10 +39,9 @@ export default function Courses() {
         "A comprehensive course for freshers focusing on Interview Preparation, Personality Development, and Communication Skills. Perfect for students starting their career journey.",
       image: "/placeholder.svg?height=300&width=400&text=Interview+Skills",
       duration: "12 weeks",
-      students: 150,
+      students: 50,
       rating: 4.9,
       price: "₹4,999",
-      location: "Mumbai Campus",
       features: ["Mock Interviews", "Personality Development", "Communication Training", "Resume Building"],
     },
     {
@@ -52,10 +51,9 @@ export default function Courses() {
         "Aimed at professionals with some experience, covering Career Guidance, Advanced Communication, and Professional Networking strategies.",
       image: "/placeholder.svg?height=300&width=400&text=Career+Growth",
       duration: "16 weeks",
-      students: 120,
+      students: 65,
       rating: 4.8,
       price: "₹4,999",
-      location: "Bangalore Campus",
       features: ["Leadership Skills", "Advanced Communication", "Networking", "Career Strategy"],
     },
     {
@@ -68,7 +66,6 @@ export default function Courses() {
       students: 80,
       rating: 4.7,
       price: "₹4,999",
-      location: "Delhi Campus",
       features: ["Executive Presence", "Strategic Thinking", "Team Leadership", "Public Speaking"],
     },
     {
@@ -78,10 +75,9 @@ export default function Courses() {
         "The all-in-one, structured learning journey for individuals at any stage of their career, designed to accelerate growth and success across all domains.",
       image: "/placeholder.svg?height=300&width=400&text=Complete+Package",
       duration: "20 weeks",
-      students: 200,
+      students: 90,
       rating: 4.9,
       price: "₹11,999",
-      location: "All Campuses",
       features: ["Complete Career Package", "All Skill Levels", "Mentorship", "Job Placement Support"],
     },
   ]
@@ -94,7 +90,6 @@ export default function Courses() {
         "Learn to communicate effectively in digital environments, master video calls, online presentations, and virtual team collaboration.",
       image: "/placeholder.svg?height=300&width=400&text=Digital+Communication",
       duration: "Self-paced",
-      students: 1250,
       rating: 4.9,
       price: "₹2,999",
       level: "Beginner to Advanced",
@@ -107,7 +102,6 @@ export default function Courses() {
         "Develop professional writing skills for emails, reports, proposals, and technical documentation that gets results.",
       image: "/placeholder.svg?height=300&width=400&text=Professional+Writing",
       duration: "8 weeks",
-      students: 890,
       rating: 4.8,
       price: "₹3,999",
       level: "Intermediate",
@@ -120,7 +114,6 @@ export default function Courses() {
         "Complete interview preparation covering technical interviews, behavioral questions, salary negotiation, and follow-up strategies.",
       image: "/placeholder.svg?height=300&width=400&text=Interview+Prep",
       duration: "6 weeks",
-      students: 2100,
       rating: 4.9,
       price: "₹4,999",
       level: "All Levels",
@@ -133,7 +126,6 @@ export default function Courses() {
         "Create a powerful personal brand, optimize your LinkedIn profile, and learn networking strategies that open doors to opportunities.",
       image: "/placeholder.svg?height=300&width=400&text=Personal+Branding",
       duration: "4 weeks",
-      students: 1500,
       rating: 4.7,
       price: "₹2,499",
       level: "Beginner",
@@ -212,10 +204,6 @@ export default function Courses() {
                         <Star className="w-4 h-4 fill-blue-900 text-blue-900" />
                         <span className="text-sm">{course.rating} rating</span>
                       </div>
-                      <div className="flex items-center gap-2 text-slate-500">
-                        <MapPin className="w-4 h-4" />
-                        <span className="text-sm">{course.location}</span>
-                      </div>
                     </div>
 
                     <div className="mb-6">
@@ -282,10 +270,6 @@ export default function Courses() {
                       <div className="flex items-center gap-2 text-slate-500">
                         <Clock className="w-4 h-4" />
                         <span className="text-sm">{course.duration}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-slate-500">
-                        <Users className="w-4 h-4" />
-                        <span className="text-sm">{course.students} students</span>
                       </div>
                       <div className="flex items-center gap-2 text-slate-500">
                         <Star className="w-4 h-4 fill-blue-900 text-blue-900" />

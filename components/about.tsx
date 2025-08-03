@@ -48,7 +48,7 @@ export default function About() {
   ]
 
   const achievements = [
-    "5000+ successful career transformations",
+    "200+ successful career transformations",
     "95% job placement rate within 6 months",
     "50+ industry partnerships",
     "24/7 student support and mentorship"
@@ -65,7 +65,7 @@ export default function About() {
             }`}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
-              About Think About
+              Our Approach
             </h2>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
               We're dedicated to transforming careers through comprehensive professional development programs. 

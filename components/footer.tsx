@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react"
+import { Instagram, Linkedin, Mail, Phone, MapPin, X } from "lucide-react"
 
 export default function Footer() {
   const quickLinks = [
@@ -13,8 +13,8 @@ export default function Footer() {
   ]
 
   const courses = [
-    { name: "Programming", href: "#" },
-    { name: "Data Science", href: "#" },
+    { name: "Java", href: "#" },
+    { name: "c++", href: "#" },
     { name: "UX/UI Design", href: "#" },
     { name: "Digital Marketing", href: "#" },
     { name: "Cybersecurity", href: "#" },
@@ -29,7 +29,7 @@ export default function Footer() {
   ]
 
   const socialLinks = [
-    { icon: Twitter, href: "x.com/ThinkAbout__in", label: "Twitter" },
+    { icon: X, href: "https://x.com/ThinkAbout__in", label: "Twitter" },
     { icon: Instagram, href: "https://www.instagram.com/thinkabout.official/", label: "Instagram" },
     { icon: Linkedin, href: "https://www.linkedin.com/company/107836984/admin/dashboard/", label: "LinkedIn" },
   ]
@@ -41,14 +41,14 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
-              <Image
-                src="/logo.svg"
-                alt="Think About Logo"
-                width={40}
-                height={40}
-                className="w-10 h-10 filter brightness-0 invert"
-              />
-              <span className="text-xl sm:text-2xl font-bold text-blue-300">Think About</span>
+              <div className="text-xl sm:text-2xl font-bold text-blue-300">
+                <Image
+                alt="Try"
+                src="/try.png"
+                width={700}
+                height={100}
+                />
+                </div>
             </div>
             <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
               Transforming education through technology and innovation. Join thousands of students worldwide in their
