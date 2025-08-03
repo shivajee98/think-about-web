@@ -115,82 +115,82 @@ export default function Contact() {
               }`}
           >
             <Card className="shadow-lg bg-slate-50 border-blue-900/10">
-              <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl text-slate-800">Send us a Message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
-                        Full Name
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Your full name"
-                        required
-                        className="w-full bg-white border-slate-300 text-slate-800 placeholder-slate-400 focus:border-blue-900"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
-                        Email Address
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="your.email@example.com"
-                        required
-                        className="w-full bg-white border-slate-300 text-slate-800 placeholder-slate-400 focus:border-blue-900"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">
-                      Subject
-                    </label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      placeholder="What's this about?"
-                      required
-                      className="w-full bg-white border-slate-300 text-slate-800 placeholder-slate-400 focus:border-blue-900"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
-                      Message
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Tell us more about your inquiry..."
-                      required
-                      rows={6}
-                      className="w-full bg-white border-slate-300 text-slate-800 placeholder-slate-400 focus:border-blue-900"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    className="w-full bg-blue-900 hover:bg-blue-800 text-white py-3 text-lg font-semibold transition-all duration-200 transform hover:scale-105"
-                  >
-                    <Send className="w-5 h-5 mr-2" />
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
+                <CardHeader>
+                    <CardTitle className="text-xl sm:text-2xl text-slate-800">Send us a Message</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                        <div className="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+                                    Full Name
+                                </label>
+                                <Input
+                                    id="name"
+                                    name="name"
+                                    type="text"
+                                    value={formData.name}
+                                    onChange={handleInputChange}
+                                    placeholder="Your full name"
+                                    required
+                                    className="w-full bg-white border-slate-300 placeholder-slate-400 focus:border-blue-900 text-black"
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+                                    Email Address
+                                </label>
+                                <Input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
+                                    placeholder="your.email@example.com"
+                                    required
+                                    className="w-full bg-white border-slate-300 placeholder-slate-400 focus:border-blue-900 text-black"
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">
+                                Subject
+                            </label>
+                            <Input
+                                id="subject"
+                                name="subject"
+                                type="text"
+                                value={formData.subject}
+                                onChange={handleInputChange}
+                                placeholder="What's this about?"
+                                required
+                                className="w-full bg-white border-slate-300 placeholder-slate-400 focus:border-blue-900 text-black"
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
+                                Message
+                            </label>
+                            <Textarea
+                                id="message"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleInputChange}
+                                placeholder="Tell us more about your inquiry..."
+                                required
+                                rows={6}
+                                className="w-full bg-white border-slate-300 placeholder-slate-400 focus:border-blue-900 text-black"
+                            />
+                        </div>
+                        <Button
+                            type="submit"
+                            className="w-full bg-blue-900 hover:bg-blue-800 text-white py-3 text-lg font-semibold transition-all duration-200 transform hover:scale-105"
+                        >
+                            <Send className="w-5 h-5 mr-2" />
+                            Send Message
+                        </Button>
+                    </form>
+                </CardContent>
             </Card>
           </div>
 
