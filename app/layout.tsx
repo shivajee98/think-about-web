@@ -18,21 +18,21 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://thinkabout.education"),
   title: "Think About - Transform Your Future with Quality Education",
+  icons: {
+    icon: "/logo_123.png",
+    shortcut: "/logo_123.png",
+    apple: "/logo_123.png",
+  },
   description:
     "Join thousands of students learning cutting-edge skills in programming, design, and digital marketing. Start your journey with Think About today.",
   keywords: "online courses, programming, web development, design, digital marketing, education, learning platform",
   authors: [{ name: "Think About Team" }],
-  creator: "Think About",
-  publisher: "Think About",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
-  },
-  metadataBase: new URL("https://thinkabout.education"),
-  alternates: {
-    canonical: "/",
   },
   openGraph: {
     title: "Think About - Transform Your Future with Quality Education",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "Think About",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/logo_12.png",
         width: 1200,
         height: 630,
         alt: "Think About - Online Learning Platform",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: "Think About - Transform Your Future with Quality Education",
     description:
       "Join thousands of students learning cutting-edge skills in programming, design, and digital marketing.",
-    images: ["/og-image.jpg"],
+    images: ["/logo_12.png"],
     creator: "@thinkaboutedu",
   },
   robots: {
