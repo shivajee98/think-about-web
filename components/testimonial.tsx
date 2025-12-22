@@ -36,11 +36,11 @@ const TestimonialSection = () => {
   const getBentoClass = (index: number) => {
     const patterns = [
       "md:col-span-2 md:row-span-1", // Wide card
-      "md:col-span-1 md:row-span-2", // Tall card
-      "md:col-span-1 md:row-span-1", // Regular card
-      "md:col-span-2 md:row-span-1", // Wide card
       "md:col-span-1 md:row-span-1", // Regular card
       "md:col-span-1 md:row-span-1", // Regular card
+      "md:col-span-1 md:row-span-1", // Regular card
+      "md:col-span-1 md:row-span-1", // Regular card
+       "md:col-span-2 md:row-span-1", // Wide card
     ];
     return patterns[index % patterns.length];
   };

@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Instagram, Linkedin, Mail, Phone, MapPin, X } from "lucide-react"
+import { Instagram, Linkedin, Mail, Phone, MapPin, X, ArrowRight, Heart } from "lucide-react"
 
 export default function Footer() {
   const quickLinks = [
@@ -13,8 +13,8 @@ export default function Footer() {
   ]
 
   const courses = [
-    { name: "Java", href: "#" },
-    { name: "c++", href: "#" },
+    { name: "Java Programming", href: "#" },
+    { name: "C++ Fundamentals", href: "#" },
     { name: "UX/UI Design", href: "#" },
     { name: "Digital Marketing", href: "#" },
     { name: "Cybersecurity", href: "#" },
@@ -25,7 +25,7 @@ export default function Footer() {
     { name: "Help Center", href: "#" },
     { name: "Student Portal", href: "#" },
     { name: "Instructor Portal", href: "#" },
-    { name: "Community", href: "https://wa.me/+918102117024?text=Hi! I'm interested in learning more about Think About courses." },
+    { name: "Community Support", href: "https://wa.me/+918102117024?text=Hi! I'm interested in learning more about Think About courses." },
   ]
 
   const socialLinks = [
@@ -35,51 +35,71 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-slate-800 text-white py-16 border-t border-blue-900/20">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-12">
-          {/* Company Info */}
-          <div className="space-y-6">
+    <footer className="bg-slate-950 text-slate-300 py-20 border-t border-slate-900 overflow-hidden relative">
+      {/* Decorative gradient overlay */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600"></div>
+
+      {/* Subtle background glow */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-900/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-indigo-900/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 mb-16">
+          {/* Company Info - Spans 4 columns */}
+          <div className="lg:col-span-4 space-y-8">
             <div className="flex items-center space-x-2">
-              <div className="text-xl sm:text-2xl font-bold text-blue-300">
+               <div className="relative w-48 h-12">
                 <Image
-                alt="Try"
-                src="/try.png"
-                width={700}
-                height={100}
+                    alt="Think About Logo"
+                    src="/try.png"
+                    fill
+                    className="object-contain object-left"
                 />
-                </div>
+               </div>
             </div>
-            <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
+            <p className="text-slate-400 leading-relaxed text-base max-w-sm">
               Transforming education through technology and innovation. Join thousands of students worldwide in their
-              learning journey.
+              learning journey with our expertly crafted courses.
             </p>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-slate-300 text-sm sm:text-base">
-                <Mail className="w-4 sm:w-5 h-4 sm:h-5 text-blue-300" />
+            <div className="space-y-4">
+              <a href="mailto:care@thinkabout.in" className="flex items-center space-x-3 text-slate-400 hover:text-white transition-colors group">
+                <div className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center group-hover:bg-blue-900/20 transition-colors">
+                    <Mail className="w-5 h-5 text-blue-500 group-hover:text-blue-400" />
+                </div>
                 <span>care@thinkabout.in</span>
-              </div>
-              <div className="flex items-center space-x-3 text-slate-300 text-sm sm:text-base">
-                <Phone className="w-4 sm:w-5 h-4 sm:h-5 text-blue-300" />
-                <span>+918102117024</span>
-              </div>
-              <div className="flex items-center space-x-3 text-slate-300 text-sm sm:text-base">
-                <MapPin className="w-4 sm:w-5 h-4 sm:h-5 text-blue-300" />
+              </a>
+              <a href="tel:+918102117024" className="flex items-center space-x-3 text-slate-400 hover:text-white transition-colors group">
+                <div className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center group-hover:bg-blue-900/20 transition-colors">
+                    <Phone className="w-5 h-5 text-blue-500 group-hover:text-blue-400" />
+                </div>
+                <span>+91 81021 17024</span>
+              </a>
+              <div className="flex items-center space-x-3 text-slate-400 group">
+                <div className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-blue-500" />
+                </div>
                 <span>Mithanpura Muzaffarpur, Bihar</span>
               </div>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg sm:text-xl font-semibold mb-6 text-blue-300">Quick Links</h3>
+          {/* Spacer */}
+          <div className="hidden lg:block lg:col-span-1"></div>
+
+          {/* Quick Links - Spans 2 columns */}
+          <div className="lg:col-span-2 md:col-span-4">
+            <h3 className="text-white text-lg font-bold mb-6 relative inline-block">
+              Quick Links
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
+            </h3>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-slate-300 hover:text-blue-300 transition-colors duration-200 text-sm sm:text-base"
+                    className="flex items-center text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-300 text-sm group"
                   >
+                    <ArrowRight className="w-3 h-3 mr-2 text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {link.name}
                   </a>
                 </li>
@@ -87,16 +107,20 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Courses */}
-          <div>
-            <h3 className="text-lg sm:text-xl font-semibold mb-6 text-blue-300">Popular Courses</h3>
+          {/* Courses - Spans 3 columns */}
+          <div className="lg:col-span-3 md:col-span-4">
+            <h3 className="text-white text-lg font-bold mb-6 relative inline-block">
+              Popular Courses
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
+            </h3>
             <ul className="space-y-3">
               {courses.map((course, index) => (
                 <li key={index}>
                   <a
                     href={course.href}
-                    className="text-slate-300 hover:text-blue-300 transition-colors duration-200 text-sm sm:text-base"
+                    className="flex items-center text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-300 text-sm group"
                   >
+                    <ArrowRight className="w-3 h-3 mr-2 text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {course.name}
                   </a>
                 </li>
@@ -104,16 +128,20 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Support */}
-          <div>
-            <h3 className="text-lg sm:text-xl font-semibold mb-6 text-blue-300">Support</h3>
+          {/* Support - Spans 2 columns */}
+          <div className="lg:col-span-2 md:col-span-4">
+            <h3 className="text-white text-lg font-bold mb-6 relative inline-block">
+              Support
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
+            </h3>
             <ul className="space-y-3">
               {support.map((item, index) => (
                 <li key={index}>
                   <a
                     href={item.href}
-                    className="text-slate-300 hover:text-blue-300 transition-colors duration-200 text-sm sm:text-base"
+                    className="flex items-center text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-300 text-sm group"
                   >
+                    <ArrowRight className="w-3 h-3 mr-2 text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {item.name}
                   </a>
                 </li>
@@ -122,35 +150,32 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Social Links & Newsletter */}
-        <div className="border-t border-blue-900/20 pt-8 mb-8">
+        {/* Social Links & Copyright */}
+        <div className="border-t border-slate-900 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            <div className="flex space-x-6">
+            <div className="text-center md:text-left order-2 md:order-1">
+              <p className="text-slate-500 text-sm flex items-center justify-center md:justify-start">
+                © {new Date().getFullYear()} Think About. Made with
+                <Heart className="w-3 h-3 mx-1 text-red-500 fill-red-500 animate-pulse" />
+                for learners worldwide.
+              </p>
+            </div>
+
+            <div className="flex space-x-4 order-1 md:order-2">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="text-slate-400 hover:text-blue-300 transition-colors duration-200 transform hover:scale-110"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-600/20"
                 >
-                  <social.icon className="w-5 sm:w-6 h-5 sm:h-6" />
+                  <social.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
-            <div className="text-center md:text-right">
-              <h4 className="text-base sm:text-lg font-semibold mb-2 text-blue-300">Stay Updated</h4>
-              <p className="text-slate-300 text-xs sm:text-sm">
-                Subscribe to our newsletter for the latest courses and updates
-              </p>
-            </div>
           </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="border-t border-blue-900/20 pt-8 text-center">
-          <p className="text-slate-400 text-xs sm:text-sm">
-            © {new Date().getFullYear()} Think About. All rights reserved. Made with ❤️ for learners worldwide.
-          </p>
         </div>
       </div>
     </footer>

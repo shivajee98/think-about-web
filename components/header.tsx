@@ -38,7 +38,7 @@ export default function Header() {
           <div className="flex items-center space-x-3">
             <div className="flex items-center space-x-3">
               <Link href="/">
-                <Image src="/logo.svg" alt="Think About Logo" width={130} height={40} className="w-100 h-100" priority />
+                <Image src="/logo.png" alt="Think About Logo" width={150} height={50} className="w-auto h-12" priority />
               </Link>
             </div>
           </div>
